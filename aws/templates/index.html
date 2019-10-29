@@ -1,0 +1,15 @@
+{% extends 'base.html'%}
+{% block content %}
+<form method="post" enctype="multipart/form-data" id="formUpload">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit">Submit</button>
+</form>
+{% for image in images %}
+<div>
+    <img src="{{image.file.url}}">
+</div>
+{% empty%}
+    <p style="color: blue;">No images in my gallery yet :-(</p>
+{% endfor %}
+{% endblock %}
