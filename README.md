@@ -1,0 +1,1 @@
+# aws-upload-of-media-django
